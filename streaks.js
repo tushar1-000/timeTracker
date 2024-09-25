@@ -1,6 +1,7 @@
 import confetti from "canvas-confetti";
 let taskCompletedBtn = document.getElementById("task-completed");
 let streakNumber = document.getElementById("streak-number");
+let showConfetti = false;
 
 function getCurrentDate() {
   const today = new Date();
@@ -17,12 +18,19 @@ function updateStreak() {
     const diffTime = Math.abs(new Date(currentDate) - lastDate);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-    if (diffDays == 1) streak++;
-    else if (diffDays > 1) streak = 1;
-  } else streak = 1;
+    if (diffDays == 1) {
+      streak++;
+      showConfetti = true;
+    } else if (diffDays > 1) {
+      streak = 1;
+      showConfetti = true;
+    }
+  } else {
+    streak = 1;
+    showConfetti = true;
+  }
   localStorage.setItem("lastActiveDate", currentDate);
   localStorage.setItem("streak", streak);
-  console.log(streakNumber);
 
   streakNumber.innerText = streak;
 }
@@ -34,18 +42,20 @@ buttonCompleted.addEventListener("click", () => {
 
 window.onload = function () {
   const streak = localStorage.getItem("streak") || 0;
+  streakNumber.innerText = streak;
 };
 
 taskCompletedBtn.addEventListener("click", () => {
-  confetti({
-    particleCount: 100,
-    startVelocity: 20,
-    spread: 360,
-    origin: {
-      // x: 555,
-      // since they fall down, start a bit higher than random
-      y: 0.4,
-    },
-  });
   updateStreak();
+  if (showConfetti) {
+    confetti({
+      particleCount: 100,
+      startVelocity: 20,
+      spread: 360,
+      origin: {
+        y: 0.4,
+      },
+    });
+    showConfetti = false;
+  }
 });
