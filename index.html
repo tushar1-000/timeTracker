@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <!-- Headder -->
+    <div>
+      <header>
+        <div class="container">
+          <div class="header">
+            <h1 class="header__heading">Time tracker</h1>
+            <div class="header__icons">
+              <ul>
+                <!-- <li class="nav-items">
+                  <img
+                    class="icon"
+                    src="/public/images/graph-white.png"
+                    alt=""
+                  />
+                  <span id="stats">Stats</span>
+                </li> -->
+                <li class="nav-items" id="setting">
+                  <img
+                    class="icon"
+                    src="/public/images/config-white.png"
+                    alt=""
+                  />
+                  <span>Settings</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="divider"></div>
+        </div>
+      </header>
+
+      <!-- SECTION -->
+
+      <section class="container">
+        <div class="streak-container">
+          <h1>Current Streak: <span id="streak-number">0</span>🔥</h1>
+        </div>
+
+        <div class="main">
+          <div class="main__items">
+            <button class="main__btn active" id="pomodoro">
+              <span id="pomo-lg">Pomodoro</span>
+              <span id="pomo-sm">Pomo</span>
+            </button>
+            <button class="main__btn" id="short-break"><span id="short-lg">Short Break</span>  <span   id="short-sm">Short</span> </button>
+            <button class="main__btn" id="long-break"> <span id = "long-lg">Long Break</span> <span  id="long-sm" >Long</span> </button>
+          </div>
+          <div class="main__time">
+            <h1 class="time">60:00</h1>
+          </div>
+          <div class="main__button">
+            <button class="main__button-start">START</button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container section__heading">
+          <h1>Time to focus!</h1>
+        </div>
+      </section>
+    </div>
+
+    <section>
+      <div id="streak-section">
+        <button id="task-completed">Completed today's session</button>
+      </div>
+    </section>
+    <script defer type="module" src="/main.js"></script>
+  </body>
+</html>

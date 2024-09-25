@@ -1,0 +1,300 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+/********** VARIABLES **********/
+:root {
+  --red--dark: rgb(186, 73, 73);
+  --red-light: #c15c5c;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--red--dark);
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+
+.header__heading {
+  font-size: 1.5rem;
+  font-weight: light;
+  letter-spacing: 0.25rem;
+  text-transform: capitalize;
+}
+
+.header__icons ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+}
+
+.header__icons ul li {
+  font-size: 1.25rem;
+}
+
+.nav-items {
+  display: flex;
+  gap: 5px;
+  background-color: var(--red-light);
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.nav-items span {
+  /* display: none; */
+}
+
+.icon {
+  height: 2rem;
+}
+
+.divider {
+  height: 0.2rem;
+  background-color: white;
+  opacity: 0.7;
+}
+
+section {
+  margin: 20px 0;
+}
+
+.main {
+  width: 100%;
+  background-color: var(--red-light);
+  border-radius: 4px;
+}
+
+li {
+  list-style: none;
+}
+
+#short-lg,
+#long-lg,
+#pomo-lg {
+  display: none;
+}
+
+.main__items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+  padding-top: 1.5rem;
+}
+
+.main__btn {
+  padding: 2px 12px;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  background-color: inherit;
+  border: none;
+  border-radius: 5px;
+}
+.active {
+  background-color: var(--red--dark);
+}
+
+.main__time {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 6rem;
+}
+
+.main__button {
+  text-align: center;
+}
+
+.main__button button {
+  width: 15rem;
+  height: 3.5rem;
+  margin-bottom: 2rem;
+  box-shadow: rgb(235, 235, 235) 0px 6px 0px;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 3px;
+  font-size: 2rem;
+  color: var(--red--dark);
+  font-weight: bold;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.section__heading {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal {
+  position: absolute;
+  min-height: 80%;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  background-color: var(--red--dark);
+  z-index: 11;
+  opacity: 1;
+  padding: 30px;
+}
+
+.modal__headings h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.modal__headings p {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.modal__input {
+  padding: 1.5rem 0;
+  font-size: 1.25rem;
+}
+
+.modal__input span {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  width: 100px;
+}
+
+.modal__input input {
+  padding: 10px;
+  outline: none;
+  margin-left: 2rem;
+}
+
+.modal__button {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.modal__button button {
+  width: 15rem;
+  height: 3.5rem;
+  margin-bottom: 2rem;
+  box-shadow: rgb(235, 235, 235) 0px 6px 0px;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 3px;
+  font-size: 2rem;
+  color: var(--red-light);
+  font-weight: bold;
+}
+
+.streak-container {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.streak-container h1 {
+  font-size: 2rem;
+  margin-top: 15px;
+  letter-spacing: 3px;
+}
+
+#streak-section {
+  text-align: center;
+}
+
+#task-completed {
+  padding: 15px 15px;
+  border-radius: 4px;
+  border: none;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  color: white;
+  background-color: var(--red-light);
+}
+
+/********** UTILITY **********/
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/********** MEDIA QUERY **********/
+/* XS */
+@media (min-width: 475px) {
+}
+
+/* SM */
+@media (min-width: 640px) {
+}
+
+/* MD */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+  #short-sm,
+  #long-sm,
+  #pomo-sm {
+    display: none;
+  }
+  #short-lg,
+  #long-lg,
+  #pomo-lg {
+    display: block;
+  }
+  .header__heading {
+    font-size: 2.5rem;
+  }
+}
+
+/* LG */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+/* XL */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+/* 2XL */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1024px;
+  }
+}
